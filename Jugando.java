@@ -21,7 +21,7 @@ public class Jugando extends Applet implements Runnable {
 	
     public void start(){
     	animacion = new Thread(this);
-    	animacion.start(); //llama al método run
+    	animacion.start(); //llama al mÃ©todo run
     }
     
     public void paint(Graphics g){
@@ -46,6 +46,19 @@ public class Jugando extends Applet implements Runnable {
     		arquero.actualizar(ARRIBA);
     	if(tecla == 83)
     		arquero.actualizar(ABAJO);
+	    
+	    //Mira a ver si con esto funciona
+	    repaint();
+    	return true;
+    }
+	public boolean keyDown(Event ev, int tecla){
+    	if(tecla == 87)
+    		arquero.actualizar(ARRIBA);
+    	if(tecla == 83)
+    		arquero.actualizar(ABAJO);
+	    
+	    //Mira a ver si con esto funciona
+	    repaint();
     	return true;
     }
 }
